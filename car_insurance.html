@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    #message {
+      display: none;
+      font-size: 1rem;
+      margin: 1rem;
+    }
+  </style>
+  <body>
+    <form method="post">
+      <label for="name">Name : </label>
+      <input type="text" id="name" name="username" required />
+
+      <label for="email">Email : </label>
+      <input type="email" id="email" required />
+
+      <label>Gender : </label>
+      <label id="male">Male</label>
+      <input type="radio" name="gender" id="male" required />
+      <label id="female">Female</label>
+      <input type="radio" name="gender" id="female" required />
+
+      <label for="cars">Car Brands : </label>
+      <select id="cars">
+        <option value="bmw">Bmw</option>
+        <option value="bmw">Bmw</option>
+        <option value="bmw">Bmw</option>
+      </select>
+
+      <label for="carage">Car Age : </label>
+      <input type="number" id="carage" />
+
+      <label for="dop">Date of Purchase(dop) : </label>
+      <input type="date" id="dop" required />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" required />
+
+      <button type="submit" form="form1" value="">submit</button>
+    </form>
+  </body>
+
+  <script>
+    const button = document.getElementById("button");
+    const name = document.getElementById("name");
+    const email = document.getElementById("email");
+    const message = document.getElementById("message");
+    const tbody = document.getElementById("tbody");
+    const arr = [];
+
+    button.addEventListener("click", success);
+
+    function success(e) {
+      e.preventDefault();
+      if (!(name.value && email.value)) {
+        message.innerText = "Please fill all values";
+        message.style.display = "block";
+        message.style.color = "red";
+        return;
+      }
+      message.innerText = "Success";
+      message.style.display = "block";
+      message.style.color = "green";
+      arr.push({
+        name: name.value,
+        email: email.value,
+      });
+      console.log(arr);
+      renderData();
+    }
+
+    let row = "";
+
+    function renderData() {
+      tbody.innerHTML = "";
+      arr.forEach((e) => {
+        row += `
+        <tr>
+          <td>${e.name}</td>
+          <td>${e.email}</td>
+        </tr>
+      `;
+      });
+      tbody.innerHTML = row;
+    }
+  </script>
+</html>

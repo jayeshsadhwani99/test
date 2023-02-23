@@ -1,0 +1,11 @@
+.holder {
+  display: grid;
+  grid-template-columns: repeat(2, 200px);
+  grid-template-rows: repeat(2, 200px);
+}
+
+.item {
+  width: 80%;
+  background-color: red;
+  height: 80%;
+}

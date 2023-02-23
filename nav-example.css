@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: maroon;
+  color: white;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+nav {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.links {
+  flex: 0.5;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.brand {
+  font-size: 2rem;
+}
+
+.menu-icon {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  nav {
+    flex-direction: column;
+  }
+
+  .links {
+    flex-direction: column;
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+    position: absolute;
+    right: 10%;
+  }
+}

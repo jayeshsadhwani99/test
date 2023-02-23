@@ -1,0 +1,15 @@
+.holder {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.holder > * {
+  width: 30vw;
+  height: 20px;
+  background-color: blue;
+}
+
+.el1 {
+  background-color: red;
+}
